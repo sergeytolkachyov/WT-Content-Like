@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" group="content" method="upgrade">
+	<name>PLG_WT_CONTENT_LIKE</name>
+	<author>Sergey Tolkachyov</author>
+	<creationDate>24.03.2022</creationDate>
+	<copyright>Copyright (C) Sergey Tolkachyov. All rights reserved.</copyright>
+	<license>GNU General Public License version 3</license>
+	<authorEmail>info@web-tolk.ru</authorEmail>
+	<authorUrl>https://web-tolk.ru</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_WT_CONTENT_LIKE_DESC</description>
+	<scriptfile>script.php</scriptfile>
+	<files>
+		<folder>fields</folder>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<folder>media</folder>
+		<filename plugin="wt_content_like">wt_content_like.php</filename>
+	</files>
+	<languages folder="language" client="administrator">
+		<language tag="en-GB">en-GB/en-GB.plg_content_wt_content_like.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_content_wt_content_like.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_content_wt_content_like.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_content_wt_content_like.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field addfieldpath="plugins/content/wt_content_like/fields" type="plugininfo" name="plugininfo"/>
+				<field type="text" name="css_btn_class" label="PLG_WT_CONTENT_LIKE_CSS_BTN_CLASS" default="btn btn-sm position-relative"/>
+				<field type="text" name="css_icon_class" label="PLG_WT_CONTENT_LIKE_CSS_ICON_CLASS" default="fas fa-thumbs-up"/>
+				<field type="text" name="css_badge_class" label="PLG_WT_CONTENT_LIKE_CSS_BADGE_CLASS" default="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"/>
+				<field type="filelist" name="layout" label="PLG_WT_CONTENT_LIKE_LAYOUT" directory="plugins/content/wt_content_like/tmpl" stripext="true" hide_default="true" hide_none="true"/>
+				<field type="radio" name="show_microdata" label="PLG_WT_CONTENT_LIKE_SHOW_MICRODATA" default="0" class="btn-group btn-group-yesno">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field type="category"
+					   name="category_exclude"
+					   extension="com_content"
+					   label="PLG_WT_CONTENT_LIKE_CATEGORY_EXCLUDE"
+					   multiple="true"/>
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+        <server type="extension" name="Web Tolk - WT Content Like" priority="1">https://web-tolk.ru/component/swjprojects/jupdate.html?element=wt_content_like</server>
+    </updateservers>
+</extension>

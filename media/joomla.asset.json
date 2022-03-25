@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "plg_content_wt_content_like",
+  "version": "1.0.0",
+  "description": "Joomla CMS",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "plg_content_wt_content_like.wt_content_like",
+      "type": "script",
+      "uri": "plg_content_wt_content_like/wt_content_like.js"
+      "version": "9931091da78ee75ad2889d3f1f1113f6327285d1"
+    }    
+  ]
+}
