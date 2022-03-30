@@ -2,12 +2,12 @@
 <extension version="4.0" type="plugin" group="content" method="upgrade">
 	<name>PLG_WT_CONTENT_LIKE</name>
 	<author>Sergey Tolkachyov</author>
-	<creationDate>24.03.2022</creationDate>
+	<creationDate>30.03.2022</creationDate>
 	<copyright>Copyright (C) Sergey Tolkachyov. All rights reserved.</copyright>
 	<license>GNU General Public License version 3</license>
 	<authorEmail>info@web-tolk.ru</authorEmail>
 	<authorUrl>https://web-tolk.ru</authorUrl>
-	<version>1.0.0</version>
+	<version>1.0.2</version>
 	<description>PLG_WT_CONTENT_LIKE_DESC</description>
 	<scriptfile>script.php</scriptfile>
 	<files>
@@ -17,11 +17,16 @@
 		<folder>media</folder>
 		<filename plugin="wt_content_like">wt_content_like.php</filename>
 	</files>
+	 <media folder="media" destination="plg_content_wt_content_like">
+        <folder>js</folder>
+    </media>
 	<languages folder="language" client="administrator">
-		<language tag="en-GB">en-GB/en-GB.plg_content_wt_content_like.ini</language>
 		<language tag="ru-RU">ru-RU/ru-RU.plg_content_wt_content_like.ini</language>
-		<language tag="en-GB">en-GB/en-GB.plg_content_wt_content_like.sys.ini</language>
 		<language tag="ru-RU">ru-RU/ru-RU.plg_content_wt_content_like.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_content_wt_content_like.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_content_wt_content_like.sys.ini</language>
+		<language tag="tr-TR">tr-TR/tr-TR.plg_content_wt_content_like.ini</language>
+		<language tag="tr-TR">tr-TR/tr-TR.plg_content_wt_content_like.sys.ini</language>
 	</languages>
 	<config>
 		<fields name="params">

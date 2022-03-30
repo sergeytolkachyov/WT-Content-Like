@@ -23,12 +23,12 @@ function wt_content_like() {
 
 						let rating_message_span = document.getElementById('wt_content_like_meesage_' + articleId);
 						rating_message_span.innerHTML = json.message;
-						rating_message_span.setAttribute('style','color:green;');
+						rating_message_span.setAttribute('style','color:#008000;');
 
 					} else {
 						let rating_message_span = document.getElementById('wt_content_like_meesage_' + articleId);
 						rating_message_span.innerHTML = json.message;
-						rating_message_span.setAttribute('style','color:red;');
+						rating_message_span.setAttribute('style','color:#FF0000;');
 					}
 				}
 			}
