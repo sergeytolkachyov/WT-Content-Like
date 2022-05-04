@@ -4,7 +4,7 @@
  * @author     Sergey Tolkachyov info@web-tolk.ru https://web-tolk.ru
  * @copyright  Copyright (C) 2022 Sergey Tolkachyov. All rights reserved.
  * @license    GNU General Public License version 3 or later
- * @version	   1.0.2
+ * @version	   1.0.0
  */
 use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
@@ -12,6 +12,9 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\FileLayout;
 use Joomla\CMS\MVC\Model\BaseDatabaseModel;
 use Joomla\CMS\Plugin\CMSPlugin;
+use Joomla\CMS\Plugin\PluginHelper;
+use Joomla\CMS\Uri\Uri;
+use Joomla\CMS\Session\Session;
 
 defined('_JEXEC') or die;
 
@@ -40,7 +43,49 @@ class PlgContentWt_content_like extends CMSPlugin
 	 */
 	public function onContentBeforeDisplay($context, &$row, &$params, $page = 0)
 	{
+		if($this->params->get('button_like_position','before_display_content') == 'before_display_content'){
+			return $this->showLikeButton($context, $row, $params, $limitstart = 0);
+		}
 
+	}
+	/**
+	 * The display event.
+	 *
+	 * @param   string    $context     The context
+	 * @param   stdClass  $row        The item
+	 * @param   Registry  $params      The params
+	 * @param   integer   $limitstart  The start
+	 *
+	 * @return  string
+	 *
+	 * @since   3.7.0
+	 */
+	public function onContentAfterDisplay($context, $row, $params, $limitstart = 0){
+		if($this->params->get('button_like_position','before_display_content') == 'after_display_content'){
+			return $this->showLikeButton($context, $row, $params, $limitstart = 0);
+		}
+	}
+
+	/**
+	 * The display event.
+	 *
+	 * @param   string    $context     The context
+	 * @param   stdClass  $row        The item
+	 * @param   Registry  $params      The params
+	 * @param   integer   $limitstart  The start
+	 *
+	 * @return  string
+	 *
+	 * @since   3.7.0
+	 */
+	public function onContentAfterTitle($context, $row, $params, $limitstart = 0)
+	{
+		if($this->params->get('button_like_position','before_display_content') == 'after_display_title'){
+			return $this->showLikeButton($context, $row, $params, $limitstart = 0);
+		}
+	}
+
+	public function showLikeButton($context, &$row, &$params, $limitstart = 0){
 		$parts = explode(".", $context);
 
 		if ($parts[0] != 'com_content')
@@ -53,6 +98,7 @@ class PlgContentWt_content_like extends CMSPlugin
 		$jversion = new JVersion();
 		// only for Joomla 3.x
 		if (version_compare($jversion->getShortVersion(), '4.0', '<')) {
+			HTMLHelper::_('behavior.core');
 			HTMLHelper::script('plg_content_wt_content_like/wt_content_like.js',[
 				'version' => 'auto',
 				'relative' => true]);
@@ -91,7 +137,7 @@ class PlgContentWt_content_like extends CMSPlugin
 					'article_id'      => $row->id,
 				];
 
-				$html .= $this->showLikeButton($displayData);
+				$html .= $this->renderLikeButton($displayData);
 
 			}
 			elseif ($context === 'com_content.category' && $view === 'category')
@@ -113,14 +159,14 @@ class PlgContentWt_content_like extends CMSPlugin
 					'article_id'      => $row->id,
 				];
 
-				$html .= $this->showLikeButton($displayData);
+				$html .= $this->renderLikeButton($displayData);
 			}
 		}
 
 		return $html;
 	}
 
-	public function showLikeButton($displayData)
+	public function renderLikeButton($displayData)
 	{
 		$layoutId = $this->params->get('layout', 'default');
 		$layout   = new FileLayout($layoutId, JPATH_SITE . DIRECTORY_SEPARATOR . 'plugins' . DIRECTORY_SEPARATOR . 'content' . DIRECTORY_SEPARATOR . 'wt_content_like' . DIRECTORY_SEPARATOR . 'tmpl');

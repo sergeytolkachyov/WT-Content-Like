@@ -4,7 +4,7 @@
  * @version     1.0.0
  * @Author 		Sergey Tolkachyov, https://web-tolk.ru
  * @copyright   Copyright (C) 2020 Sergey Tolkachyov
- * @license     GNU/GPL http://www.gnu.org/licenses/gpl-2.0.html
+ * @license    GNU General Public License version 3 or later
  * @since 		1.0.0
  */
 

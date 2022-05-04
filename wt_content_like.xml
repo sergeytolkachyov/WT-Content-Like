@@ -2,31 +2,24 @@
 <extension version="4.0" type="plugin" group="content" method="upgrade">
 	<name>PLG_WT_CONTENT_LIKE</name>
 	<author>Sergey Tolkachyov</author>
-	<creationDate>30.03.2022</creationDate>
+	<creationDate>04.05.2022</creationDate>
 	<copyright>Copyright (C) Sergey Tolkachyov. All rights reserved.</copyright>
 	<license>GNU General Public License version 3</license>
 	<authorEmail>info@web-tolk.ru</authorEmail>
 	<authorUrl>https://web-tolk.ru</authorUrl>
-	<version>1.0.2</version>
+	<version>1.1.0</version>
 	<description>PLG_WT_CONTENT_LIKE_DESC</description>
-	<scriptfile>script.php</scriptfile>
 	<files>
 		<folder>fields</folder>
 		<folder>language</folder>
-		<folder>tmpl</folder>
-		<folder>media</folder>
+		<folder>layouts</folder>
 		<filename plugin="wt_content_like">wt_content_like.php</filename>
 	</files>
-	 <media folder="media" destination="plg_content_wt_content_like">
-        <folder>js</folder>
-    </media>
 	<languages folder="language" client="administrator">
-		<language tag="ru-RU">ru-RU/ru-RU.plg_content_wt_content_like.ini</language>
-		<language tag="ru-RU">ru-RU/ru-RU.plg_content_wt_content_like.sys.ini</language>
 		<language tag="en-GB">en-GB/en-GB.plg_content_wt_content_like.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_content_wt_content_like.ini</language>
 		<language tag="en-GB">en-GB/en-GB.plg_content_wt_content_like.sys.ini</language>
-		<language tag="tr-TR">tr-TR/tr-TR.plg_content_wt_content_like.ini</language>
-		<language tag="tr-TR">tr-TR/tr-TR.plg_content_wt_content_like.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_content_wt_content_like.sys.ini</language>
 	</languages>
 	<config>
 		<fields name="params">
@@ -45,6 +38,11 @@
 					   extension="com_content"
 					   label="PLG_WT_CONTENT_LIKE_CATEGORY_EXCLUDE"
 					   multiple="true"/>
+				<field type="list" name="button_like_position" default="before_display_content" label="PLG_WT_CONTENT_LIKE_POSITION">
+					<option value="before_display_content">PLG_WT_CONTENT_LIKE_POSITION_BEFORE_DISPLAY_CONTENT</option>
+					<option value="after_display_title">PLG_WT_CONTENT_LIKE_POSITION_AFTER_DISPLAY_TITLE</option>
+					<option value="after_display_content">PLG_WT_CONTENT_LIKE_POSITION_AFTER_DISPLAY_CONTENT</option>
+				</field>
 			</fieldset>
 		</fields>
 	</config>

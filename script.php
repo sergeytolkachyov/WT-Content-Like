@@ -1,11 +1,4 @@
 <?php
-/**
- * @package    WT Content Like
- * @author     Sergey Tolkachyov info@web-tolk.ru https://web-tolk.ru
- * @copyright  Copyright (C) 2022 Sergey Tolkachyov. All rights reserved.
- * @license    GNU General Public License version 3 or later
- * @version	   1.0.1
- */
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 use Joomla\CMS\Factory;
