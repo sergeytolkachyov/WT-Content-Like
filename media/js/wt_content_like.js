@@ -1,3 +1,11 @@
+/**
+ * @package     WT Content like
+ * @copyright   Copyright (C) 2023-2023 Sergey Tolkachyov. All rights reserved.
+ * @author      Sergey Tolkachyov - https://web-tolk.ru
+ * @link 		https://web-tolk.ru
+ * @version 	1.1.2
+ * @license     GNU General Public License version 2 or later
+ */
 if (document.readyState != 'loading') {
 	wt_content_like();
 } else {

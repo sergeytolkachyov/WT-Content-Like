@@ -1,11 +1,11 @@
 <?php
 /**
- * @package     WebTolk plugin info field
- * @version     1.0.0
- * @Author 		Sergey Tolkachyov, https://web-tolk.ru
- * @copyright   Copyright (C) 2020 Sergey Tolkachyov
- * @license    GNU General Public License version 3 or later
- * @since 		1.0.0
+ * @package     WT Content like
+ * @copyright   Copyright (C) 2023-2023 Sergey Tolkachyov. All rights reserved.
+ * @author      Sergey Tolkachyov - https://web-tolk.ru
+ * @link 		https://web-tolk.ru
+ * @version 	1.1.2
+ * @license     GNU General Public License version 2 or later
  */
 
 defined('_JEXEC') or die;

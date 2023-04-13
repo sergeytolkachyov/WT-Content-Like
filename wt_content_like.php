@@ -1,10 +1,11 @@
 <?php
 /**
- * @package    WT Content Like
- * @author     Sergey Tolkachyov info@web-tolk.ru https://web-tolk.ru
- * @copyright  Copyright (C) 2022 Sergey Tolkachyov. All rights reserved.
- * @license    GNU General Public License version 3 or later
- * @version	   1.1.0
+ * @package     WT Content like
+ * @copyright   Copyright (C) 2023-2023 Sergey Tolkachyov. All rights reserved.
+ * @author      Sergey Tolkachyov - https://web-tolk.ru
+ * @link 		https://web-tolk.ru
+ * @version 	1.1.2
+ * @license     GNU General Public License version 2 or later
  */
 use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
@@ -12,9 +13,7 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\FileLayout;
 use Joomla\CMS\MVC\Model\BaseDatabaseModel;
 use Joomla\CMS\Plugin\CMSPlugin;
-use Joomla\CMS\Plugin\PluginHelper;
-use Joomla\CMS\Uri\Uri;
-use Joomla\CMS\Session\Session;
+use Joomla\CMS\Version;
 
 defined('_JEXEC') or die;
 
@@ -52,7 +51,7 @@ class PlgContentWt_content_like extends CMSPlugin
 	 * The display event.
 	 *
 	 * @param   string    $context     The context
-	 * @param   stdClass  $row        The item
+	 * @param   stdClass  $row         The item
 	 * @param   Registry  $params      The params
 	 * @param   integer   $limitstart  The start
 	 *
@@ -95,9 +94,8 @@ class PlgContentWt_content_like extends CMSPlugin
 
 		$html = '';
 
-		$jversion = new JVersion();
 		// only for Joomla 3.x
-		if (version_compare($jversion->getShortVersion(), '4.0', '<')) {
+		if (!(new Version())->isCompatible('4.0')) {
 			HTMLHelper::_('behavior.core');
 			HTMLHelper::script('plg_content_wt_content_like/wt_content_like.js',[
 				'version' => 'auto',

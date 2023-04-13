@@ -2,12 +2,12 @@
 <extension type="plugin" group="content" method="upgrade">
 	<name>PLG_WT_CONTENT_LIKE</name>
 	<author>Sergey Tolkachyov</author>
-	<creationDate>24/10/2022</creationDate>
+	<creationDate>April 2023</creationDate>
 	<copyright>Copyright (C) Sergey Tolkachyov. All rights reserved.</copyright>
 	<license>GNU General Public License version 3</license>
 	<authorEmail>info@web-tolk.ru</authorEmail>
 	<authorUrl>https://web-tolk.ru</authorUrl>
-	<version>1.1.1</version>
+	<version>1.1.2</version>
 	<description>PLG_WT_CONTENT_LIKE_DESC</description>
 	<scriptfile>script.php</scriptfile>
 	<files>

@@ -1,10 +1,11 @@
 <?php
 /**
- * @package    WT Content Like
- * @author     Sergey Tolkachyov info@web-tolk.ru https://web-tolk.ru
- * @copyright  Copyright (C) 2022 Sergey Tolkachyov. All rights reserved.
- * @license    GNU General Public License version 3 or later
- * @version	   1.0.2
+ * @package     WT Content like
+ * @copyright   Copyright (C) 2023-2023 Sergey Tolkachyov. All rights reserved.
+ * @author      Sergey Tolkachyov - https://web-tolk.ru
+ * @link 		https://web-tolk.ru
+ * @version 	1.1.2
+ * @license     GNU General Public License version 2 or later
  */
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
