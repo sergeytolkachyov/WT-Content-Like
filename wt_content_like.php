@@ -42,9 +42,28 @@ class PlgContentWt_content_like extends CMSPlugin
 	 */
 	public function onContentBeforeDisplay($context, &$row, &$params, $page = 0)
 	{
-		if($this->params->get('button_like_position','before_display_content') == 'before_display_content'){
-			return $this->showLikeButton($context, $row, $params, $limitstart = 0);
-		}
+//		if($this->params->get('button_like_position','before_display_content') == 'before_display_content'){
+//			return $this->showLikeButton($context, $row, $params, $limitstart = 0);
+//		}
+
+        if ((new Version())->isCompatible('4.0') == true)
+        {
+            $view = Factory::getApplication()->getInput()->getString('view');
+        }
+        else
+        {
+            $view = Factory::getApplication()->input->getString('view');
+        }
+        if ($view === 'article' && $this->params->get('button_like_article_position', 'before_display_content') == 'before_display_content')
+        {
+            return $this->showLikeButton($context, $row, $params, $limitstart = 0);
+        }
+
+        if ($view === 'category' && $this->params->get('button_like_category_position', 'before_display_content') == 'before_display_content')
+        {
+            return $this->showLikeButton($context, $row, $params, $limitstart = 0);
+        }
+
 
 	}
 	/**
@@ -60,9 +79,28 @@ class PlgContentWt_content_like extends CMSPlugin
 	 * @since   3.7.0
 	 */
 	public function onContentAfterDisplay($context, $row, $params, $limitstart = 0){
-		if($this->params->get('button_like_position','before_display_content') == 'after_display_content'){
-			return $this->showLikeButton($context, $row, $params, $limitstart = 0);
-		}
+//		if($this->params->get('button_like_position','before_display_content') == 'after_display_content'){
+//			return $this->showLikeButton($context, $row, $params, $limitstart = 0);
+//		}
+
+        if ((new Version())->isCompatible('4.0') == true)
+        {
+            $view = Factory::getApplication()->getInput()->getString('view');
+        }
+        else
+        {
+            $view = Factory::getApplication()->input->getString('view');
+        }
+        if ($view === 'article' && $this->params->get('button_like_article_position', 'after_display_content') == 'after_display_content')
+        {
+            return $this->showLikeButton($context, $row, $params, $limitstart = 0);
+        }
+
+        if ($view === 'category' && $this->params->get('button_like_category_position', 'after_display_content') == 'after_display_content')
+        {
+            return $this->showLikeButton($context, $row, $params, $limitstart = 0);
+        }
+
 	}
 
 	/**
@@ -79,9 +117,28 @@ class PlgContentWt_content_like extends CMSPlugin
 	 */
 	public function onContentAfterTitle($context, $row, $params, $limitstart = 0)
 	{
-		if($this->params->get('button_like_position','before_display_content') == 'after_display_title'){
-			return $this->showLikeButton($context, $row, $params, $limitstart = 0);
-		}
+//		if($this->params->get('button_like_position','before_display_content') == 'after_display_title'){
+//			return $this->showLikeButton($context, $row, $params, $limitstart = 0);
+//		}
+
+        if ((new Version())->isCompatible('4.0') == true)
+        {
+            $view = Factory::getApplication()->getInput()->getString('view');
+        }
+        else
+        {
+            $view = Factory::getApplication()->input->getString('view');
+        }
+        if ($view === 'article' && $this->params->get('button_like_article_position', 'after_display_content') == 'after_display_title')
+        {
+            return $this->showLikeButton($context, $row, $params, $limitstart = 0);
+        }
+
+        if ($view === 'category' && $this->params->get('button_like_category_position', 'after_display_content') == 'after_display_title')
+        {
+            return $this->showLikeButton($context, $row, $params, $limitstart = 0);
+        }
+
 	}
 
 	public function showLikeButton($context, &$row, &$params, $limitstart = 0){

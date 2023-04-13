@@ -45,7 +45,18 @@
 					   extension="com_content"
 					   label="PLG_WT_CONTENT_LIKE_CATEGORY_EXCLUDE"
 					   multiple="true"/>
-				<field type="list" name="button_like_position" default="before_display_content" label="PLG_WT_CONTENT_LIKE_POSITION">
+				<field type="list"
+					   name="button_like_article_position"
+					   default="before_display_content"
+					   label="PLG_WT_CONTENT_LIKE_ARTICLE_POSITION">
+					<option value="before_display_content">PLG_WT_CONTENT_LIKE_POSITION_BEFORE_DISPLAY_CONTENT</option>
+					<option value="after_display_title">PLG_WT_CONTENT_LIKE_POSITION_AFTER_DISPLAY_TITLE</option>
+					<option value="after_display_content">PLG_WT_CONTENT_LIKE_POSITION_AFTER_DISPLAY_CONTENT</option>
+				</field>
+				<field type="list"
+					   name="button_like_category_position"
+					   default="before_display_content"
+					   label="PLG_WT_CONTENT_LIKE_CATEGORY_POSITION">
 					<option value="before_display_content">PLG_WT_CONTENT_LIKE_POSITION_BEFORE_DISPLAY_CONTENT</option>
 					<option value="after_display_title">PLG_WT_CONTENT_LIKE_POSITION_AFTER_DISPLAY_TITLE</option>
 					<option value="after_display_content">PLG_WT_CONTENT_LIKE_POSITION_AFTER_DISPLAY_CONTENT</option>
