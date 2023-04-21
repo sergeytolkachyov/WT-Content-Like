@@ -3,7 +3,7 @@
  * @copyright   Copyright (C) 2023-2023 Sergey Tolkachyov. All rights reserved.
  * @author      Sergey Tolkachyov - https://web-tolk.ru
  * @link 		https://web-tolk.ru
- * @version 	1.1.2
+ * @version 	1.1.3
  * @license     GNU General Public License version 2 or later
  */
 if (document.readyState != 'loading') {
@@ -18,7 +18,7 @@ function wt_content_like() {
 	Array.prototype.forEach.call(elements, function (el, i) {
 		el.addEventListener('click', async function () {
 			let articleId = el.getAttribute('data-article-id');
-			let response  = await fetch(window.location.protocol + "//" + window.location.host + '/index.php?option=com_ajax&plugin=wt_content_like&group=content&format=raw&article_id=' + articleId);
+			let response  = await fetch(Joomla.getOptions('system.paths', '').root + '/index.php?option=com_ajax&plugin=wt_content_like&group=content&format=raw&article_id=' + articleId);
 
 			if (response.ok){
 				let json = await response.json();
