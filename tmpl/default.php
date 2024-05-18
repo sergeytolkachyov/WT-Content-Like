@@ -1,14 +1,12 @@
 <?php
 /**
  * @package     WT Content like
- * @copyright   Copyright (C) 2023-2023 Sergey Tolkachyov. All rights reserved.
+ * @copyright   Copyright (C) 2023-2024 Sergey Tolkachyov. All rights reserved.
  * @author      Sergey Tolkachyov - https://web-tolk.ru
  * @link 		https://web-tolk.ru
- * @version 	1.1.3
+ * @version 	2.0.0
  * @license     GNU General Public License version 2 or later
  */
-use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\CMS\Language\Text;
 
 defined('_JEXEC') or die('Restricted access');
 /**
@@ -20,13 +18,10 @@ defined('_JEXEC') or die('Restricted access');
  *
  */
 
-//echo '<pre>';
-//print_r($displayData);
-//echo '</pre>';
 ?>
 
 <?php if ($displayData['show_microdata'] == 1 && $displayData['rating_count'] > 0): ?>
-	<div class="content_rating" style="display:none;" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+	<div class="content_rating" style="display:none;" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
 			<span itemprop="ratingValue"><?php echo $displayData['rating']; ?></span>
 			<span itemprop="bestRating">5</span>
 			<meta itemprop="ratingCount" content="<?php echo $displayData['rating_count']; ?>"/>
